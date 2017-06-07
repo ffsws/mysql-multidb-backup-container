@@ -4,11 +4,11 @@
 Before executing the following commands make sure that you are logged into Openshift via the commandline (`oc login`) and using the correct project (`oc project`). The mysql service doesn't have to be located in the same project, if you can access it remotely.
 
 ```
-$ oc new-app https://github.com/appuio/mysql-simple-backup-container.git --strategy=docker
+$ oc new-app https://github.com/appuio/mysql-multidb-backup-container.git --strategy=docker
 
-$ oc env dc mysql-simple-backup-container -e MYSQL_ROOT_USER=user -e MYSQL_ROOT_PASSWORD=pw -e MYSQL_SERVICE_HOST=mysql -e BACKUP_DATA_DIR=/tmp/ -e BACKUP_KEEP=5 -e BACKUP_MINUTE=10 -e BACKUP_HOUR=11
+$ oc env dc mysql-multidb-backup-container -e MYSQL_ROOT_USER=user -e MYSQL_ROOT_PASSWORD=pw -e MYSQL_SERVICE_HOST=mysql -e BACKUP_DATA_DIR=/tmp/ -e BACKUP_KEEP=5 -e BACKUP_MINUTE=10 -e BACKUP_HOUR=11
 ```
-**Note:** For values with comma (eg. 11,23) you will have to edit the dc with vim: `oc edit dc mysql-simple-backup-container`
+**Note:** For values with comma (eg. 11,23) you will have to edit the dc with vim: `oc edit dc mysql-multidb-backup-container`
 
 ## Restore Database
 ```
