@@ -10,11 +10,11 @@
             "kind": "ImageStream",
             "apiVersion": "v1",
             "metadata": {
-                "name": "mysql-simple-backup-container",
+                "name": "mysql-multidb-backup-container",
                 "generation": 1,
                 "creationTimestamp": null,
                 "labels": {
-                    "app": "mysql-simple-backup-container"
+                    "app": "mysql-multidb-backup-container"
                 }
             },
             "status": {
@@ -25,10 +25,10 @@
             "kind": "BuildConfig",
             "apiVersion": "v1",
             "metadata": {
-                "name": "mysql-simple-backup-container",
+                "name": "mysql-multidb-backup-container",
                 "creationTimestamp": null,
                 "labels": {
-                    "app": "mysql-simple-backup-container"
+                    "app": "mysql-multidb-backup-container"
                 }
             },
             "spec": {
@@ -44,7 +44,7 @@
                 "source": {
                     "type": "Git",
                     "git": {
-                        "uri": "https://github.com/appuio/mysql-simple-backup-container.git"
+                        "uri": "https://github.com/appuio/mysql-multidb-backup-container.git"
                     },
                     "secrets": null
                 },
@@ -54,7 +54,7 @@
                 "output": {
                     "to": {
                         "kind": "ImageStreamTag",
-                        "name": "mysql-simple-backup-container:latest"
+                        "name": "mysql-multidb-backup-container:latest"
                     }
                 },
                 "resources": {},

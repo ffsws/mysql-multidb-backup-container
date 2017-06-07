@@ -37,12 +37,12 @@
                         "imageChangeParams": {
                             "automatic": true,
                             "containerNames": [
-                                "mysql-simple-backup-container"
+                                "mysql-multidb-backup-container"
                             ],
                             "from": {
                                 "kind": "ImageStreamTag",
                                 "namespace": "openshift",
-                                "name": "mysql-simple-backup-container:latest"
+                                "name": "mysql-multidb-backup-container:latest"
                             }
                         }
                     }
@@ -73,7 +73,7 @@
                         "containers": [
                             {
                                 "name": "${APP_NAME}",
-                                "image": "172.30.1.1:5000/openshift/mysql-simple-backup-container",
+                                "image": "172.30.1.1:5000/openshift/mysql-multidb-backup-container",
                                 "env": [
                                     {
                                         "name": "MYSQL_USER",
@@ -200,7 +200,7 @@
             "name": "APP_NAME",
             "displayName": "App Name",
             "description": "App name for internal openshift labels",
-            "value": "mysql-simple-backup-container",
+            "value": "mysql-multidb-backup-container",
             "required": true
         }
     ]
