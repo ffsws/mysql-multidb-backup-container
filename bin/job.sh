@@ -17,9 +17,9 @@ function backup_db {
   printf '%s' "$dump" | gzip > $BACKUP_DIR/dump-${DATE}.sql.gz
 
   if [ $? -eq 0 ]; then
-    echo "backup created: ${DATE}"
+    echo "backup for db '${DB}' created: ${DATE}"
   else
-    echo "backup not successful: ${DATE}"
+    echo "backup for db '${DB}' not successful: ${DATE}"
     exit 1
   fi
 
